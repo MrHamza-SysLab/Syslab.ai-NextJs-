@@ -1,0 +1,22 @@
+<svg viewBox="0 0 355 355" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#paint0_angular_35_633_clip_path)" data-figma-skip-parse="true">
+    <!-- Original half -->
+    <g transform="matrix(0 -0.1775 -0.1775 0 177.5 177.5)">
+      <foreignObject x="-1017.05" y="-1017.05" width="2034.1" height="2034.1">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg, rgba(255,255,255,0.1498) 0deg, rgba(255,255,255,0) 60.8264deg, rgba(255,255,255,0) 289.834deg, rgba(255,255,255,0.15) 359.91deg, rgba(255,255,255,0.1498) 360deg); height:100%; width:100%; opacity:1;"></div>
+      </foreignObject>
+    </g>
+    <!-- Mirror half -->
+    <g transform="matrix(0 0.1775 0.1775 0 177.5 177.5)">
+      <foreignObject x="-1017.05" y="-1017.05" width="2034.1" height="2034.1">
+        <div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 270deg, rgba(255,255,255,0.1498) 0deg, rgba(255,255,255,0) 60.8264deg, rgba(255,255,255,0) 289.834deg, rgba(255,255,255,0.15) 359.91deg, rgba(255,255,255,0.1498) 360deg); height:100%; width:100%; opacity:1;"></div>
+      </foreignObject>
+    </g>
+  </g>
+  <rect opacity="0.5" width="355" height="355" rx="177.5" transform="matrix(1 0 0 -1 0 355)" data-figma-gradient-fill="{...}"/>
+  <defs>
+    <clipPath id="paint0_angular_35_633_clip_path">
+      <rect opacity="0.5" width="355" height="355" rx="177.5" transform="matrix(1 0 0 -1 0 355)"/>
+    </clipPath>
+  </defs>
+</svg>
