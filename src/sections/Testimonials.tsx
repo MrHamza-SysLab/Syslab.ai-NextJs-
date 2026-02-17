@@ -26,26 +26,48 @@ const getAvatarColor = (name: string) => {
 // Sample testimonial data
 const testimonials = [
     {
-        name: "Alien",
-        role: "Businessmen",
-        time: "1 day ago",
-        text: "Syslab.ai played a key role in modernizing our eLearning experience. Their products, especially iParhai and Proctor Parhai, helped us improve student engagement and ensure fair, secure online assessments",
+        name: "Dr. Hassan Jamil Syed",
+        role: "Senior Lecturer (APU)",
+        time: "July, 3rd 2025",
+        text: "The platform provided a smooth and efficient way to manage the assessment remotely. Most notably, the AI-based proctoring system enabled a secure environment that helped maintain academic integrity during the quiz.",
         avatar: "/avatar1.png",
     },
     {
-        name: "Neo",
-        role: "Student",
-        time: "2 days ago",
-        text: "Syslab.ai played a key role in modernizing our eLearning experience. Their products, especially iParhai and Proctor Parhai, helped us improve student engagement and ensure fair, secure online assessments",
+        name: "Dr. Waseem Ikram",
+        role: "Registrar (FAST-NUCES)",
+        time: "July, 3rd 2025",
+        text: "The broader feature set of ProctorParhai demonstrated strong potential for academic testing and institutional use. We are proud to support this homegrown solution and see its relevance in transforming how assessments are conducted in both academic and professional settings.",
         avatar: "/avatar2.png",
     },
     {
-        name: "Trinity",
-        role: "Teacher",
-        time: "3 days ago",
-        text: "Syslab.ai played a key role in modernizing our eLearning experience. Their products, especially iParhai and Proctor Parhai, helped us improve student engagement and ensure fair, secure online assessments",
+        name: "Mr. Ismail Bazaz",
+        role: "General Secretary (Shamsi Educational Foundation)",
+        time: "July, 3rd 2025",
+        text: "The AI-based proctoring capabilities have been especially valuable in maintaining the integrity of assessments, while the overall platform experience has been intuitive for both staff and students. The system has allowed us to scale our testing and evaluation efforts without compromising on quality or oversight.",
+        avatar: "/avatar2.png",
+    },
+    {
+        name: "Wajeeh Misbah Khan",
+        role: "CEO (Stiryum)",
+        time: "July, 4th 2025",
+        text: "We at Stiryum Technologies have had the opportunity to use ProctorParhai as part of our recruitment process to evaluate candidates from multiple countries through online assessments.",
         avatar: "/avatar3.png",
     },
+    {
+        name: "Mr. Arshad Mazoor",
+        role: "Chief Information Officer (POL)",
+        time: "July, 8th 2025",
+        text: "We at Pakistan Oxygen Limited used ProctorParhai to conduct an online recruitment test for 104 candidates, and our experience with the platform has been very positive. The ease of use, flexibility, and reliability of the system made it a highly effective solution for evaluating many applicants online.",
+        avatar: "/avatar3.png",
+    },
+    {
+        name: "Dr. Sir Huzaimah Bin Husin",
+        role: "Head of Department (FTKEK)",
+        time: "July, 11th 2025",
+        text: "Based on my experience, I would like to highly recommend ProctorParhai to my fellow educators looking for a dependable system to manage their remote assessments effecvely. Thank you.",
+        avatar: "/avatar3.png",
+    },
+    
 ];
 
 // Custom Arrows
