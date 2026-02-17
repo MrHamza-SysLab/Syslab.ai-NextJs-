@@ -33,10 +33,13 @@ export default function BannerSection() {
 
                 {/* RIGHT ILLUSTRATION */}
                 <div className="relative mt-8 md:mt-0 flex-1 flex justify-center items-center order-1 md:order-2">
+                    {/* Theme Background Glow */}
+                    <div className="absolute w-[120%] h-[120%] bg-blue-500/20 rounded-full blur-[80px] md:blur-[120px] pointer-events-none z-0"></div>
+
                     <img
                         src="/services/Service.svg"
                         alt="Services illustration"
-                        className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-contain animate-float"
+                        className="relative z-10 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl h-auto object-contain animate-float"
                     />
                 </div>
             </div>

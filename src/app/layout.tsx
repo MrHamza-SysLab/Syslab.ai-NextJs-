@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Faustina } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Faustina, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import "slick-carousel/slick/slick.css";
@@ -10,6 +9,12 @@ const faustina = Faustina({
   variable: "--faustina",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const geistMono = Geist_Mono({
@@ -30,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistMono.variable} ${faustina.variable} font-giestMono antialiased`}
+        className={`${geistMono.variable} ${faustina.variable} ${jakarta.variable} font-giestMono antialiased`}
       >
         <Navbar />
         {children}

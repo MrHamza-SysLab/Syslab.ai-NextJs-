@@ -1,4 +1,4 @@
-import Hero3 from "@/sections/Hero3";
+import Hero2 from "@/sections/Hero2";
 import CaseStudy from "@/sections/CaseStudy";
 import About from "@/sections/About";
 import Products from "@/sections/Products";
@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <section id="home">
-        <Hero3 />
+        <Hero2 />
       </section>
 
       <CaseStudy />
