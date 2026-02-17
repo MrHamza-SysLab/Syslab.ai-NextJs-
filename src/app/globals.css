@@ -114,22 +114,34 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply font-faustina min-h-screen text-white;
   }
 }
 
 @keyframes electric-glow {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6))
-            drop-shadow(0 0 12px rgba(255, 255, 255, 0.4))
-            drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
     opacity: 1;
   }
 
-  20%, 24%, 55% {
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2))
-            drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+  20%,
+  24%,
+  55% {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
     opacity: 0.8;
   }
 }
@@ -140,9 +152,12 @@
 }
 
 @keyframes float-up-down {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-12px);
   }
@@ -150,4 +165,115 @@
 
 .animate-float {
   animation: float-up-down 3s ease-in-out infinite;
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  66.66% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  66.66% {
+    transform: translateX(25%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-right-rollback {
+  0% {
+    transform: translateX(0);
+  }
+
+  66.66% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-left-rollback {
+  0% {
+    transform: translateX(0);
+  }
+
+  66.66% {
+    transform: translateX(25%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+.animate-scroll-right {
+  animation: scroll-right 9s ease-in-out infinite;
+}
+
+.animate-scroll-right-rollback {
+  animation: scroll-right-rollback 9s ease-in-out infinite;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 9s ease-in-out infinite;
+}
+
+.animate-scroll-left-rollback {
+  animation: scroll-left-rollback 9s ease-in-out infinite;
+}
+
+/* Peeling Button Effect */
+.btn-peel {
+  @apply relative inline-flex items-center justify-center font-semibold rounded-md transition-all duration-300;
+  background-color: white;
+  color: #111827;
+  /* gray-900 */
+}
+
+.btn-peel:hover {
+  background-color: #1d4ed8;
+  /* blue-700 */
+  color: white;
+  /* Cut the top-right corner to simulate the space for the fold */
+  background: linear-gradient(225deg, transparent 1.5rem, #1d4ed8 0);
+}
+
+.btn-peel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  /* The fold: simulates the back of the sticker. 
+     Gradient to top-right means bottom-left is standard color, top-right is transparent */
+  background: linear-gradient(to top right, #e5e7eb 50%, transparent 50%);
+  box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease, height 0.3s ease;
+  pointer-events: none;
+  border-bottom-left-radius: 4px;
+  /* Soften the tip of the fold */
+}
+
+.btn-peel:hover::before {
+  width: 1.5rem;
+  height: 1.5rem;
 }

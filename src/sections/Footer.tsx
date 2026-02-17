@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaYoutube, FaLinkedin, FaInstagram, FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import Image from "next/image";
 import FullWidthButton from "@/components/fullWidthButton";
 
 export default function Footer() {
+    const router = useRouter();
     const [openIndex, setOpenIndex] = useState(null);
 
     const toggleAccordion = (index: any) => {
@@ -20,14 +22,14 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="text-white w-full border-t border-white/10" style={{ background: "radial-gradient(58.42% 58.08% at 49.13% 41.92%, #152850 0%, #111827 100%)" }}>
+        <footer className="bg-[#020617] text-white w-full border-t border-white/10">
             <div className="container mx-auto px-6 md:px-16 py-16">
                 {/* Large screens: 3 columns */}
                 <div className="hidden md:flex xl:flex justify-between gap-16">
                     {/* Column 1 - Company */}
                     <div className="flex-1">
                         <div className="flex items-center gap-3 mb-8">
-                            <Image src="/footer/logo.svg" alt="Company Logo" width={30} height={30} />
+                            <Image src="/footer/whitelogo.svg" alt="Company Logo" width={30} height={30} />
                             <h3 className="text-2xl font-semibold">
                                 SysLab.<strong style={{ color: "#1D4ED8" }}>ai</strong>
                             </h3>
@@ -61,7 +63,7 @@ export default function Footer() {
                     {/* Column 3 - Subscribe */}
                     <div className="flex-1">
                         <h3 className="text-2xl font-semibold mb-9 mt-3.5">Stay Up To Date</h3>
-                        <FullWidthButton />
+                        <FullWidthButton onClick={() => router.push("/contact")} />
                     </div>
                 </div>
 
@@ -79,7 +81,7 @@ export default function Footer() {
                         {openIndex === 0 && (
                             <div className="pl-4 pb-4">
                                 <div className="flex items-center gap-3 mb-3">
-                                    <Image src="/footer/logo.svg" alt="Company Logo" width={25} height={25} />
+                                    <Image src="/footer/whitelogo.svg" alt="Company Logo" width={25} height={25} />
                                     <h3 className="text-xl font-semibold">
                                         SysLab.<strong style={{ color: "#1D4ED8" }}>ai</strong>
                                     </h3>
@@ -123,17 +125,15 @@ export default function Footer() {
                     {/* Stay Up To Date */}
                     <div className="border-b border-gray-700">
                         <button
-                            onClick={() => toggleAccordion(2)}
-                            className="w-full text-left py-4 flex justify-between items-center text-lg font-semibold"
+                            type="button"
+                            onClick={() => {
+                                router.push("/contact");
+                            }}
+                            className="w-full text-left py-4 flex justify-between items-center text-lg font-semibold cursor-pointer"
                         >
                             <span>Stay Up To Date</span>
-                            {openIndex === 2 ? <FaMinusCircle className="w-5 h-5 text-blue-500" /> : <FaPlusCircle className="w-5 h-5" />}
+                            <FaPlusCircle className="w-5 h-5" />
                         </button>
-                        {openIndex === 2 && (
-                            <div className="pl-4 pb-4">
-                                <FullWidthButton />
-                            </div>
-                        )}
                     </div>
                 </div>
             </div>

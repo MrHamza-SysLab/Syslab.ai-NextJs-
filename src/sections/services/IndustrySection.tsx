@@ -8,7 +8,7 @@ export default function IndustrySection() {
       description: "Delivering AI-powered eLearning and proctoring solutions such as iParhai and ProctorParhai, revolutionizing online learning and assessment.",
       tags: ["iParhai", "ProctorParhai"],
     },
-    { 
+    {
       image: "/services/image2.svg",
       title: "Building Smarter Cities",
       description: "Developing intelligent computer vision systems like Eyecon AI for traffic monitoring, event detection, and urban safety analytics, enabling the foundation of truly smart, connected cities.",
@@ -29,10 +29,7 @@ export default function IndustrySection() {
   ];
 
   return (
-    <section className="relative flex flex-col justify-center min-h-screen text-white overflow-hidden px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 sm:py-16 md:py-20" style={{
-                background:
-                    "radial-gradient(10% 10% at 20% 50%, #121928 100%)",
-            }} >
+    <section id="industry" className="bg-[#020617] relative flex flex-col justify-center min-h-screen text-white overflow-hidden px-3 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 sm:py-16 md:py-20">
 
       <img
         src="/gradient/Shape.svg"
@@ -45,13 +42,13 @@ export default function IndustrySection() {
         {/* HEADING */}
         <div className="mb-6 sm:mb-10 md:mb-12 lg:mb-16 w-full text-center px-2 sm:px-4">
           <h1
-                className="w-full text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight"
-            >
-                Industries We Serve
-            </h1>
-            <h2 className="mt-2 sm:mt-3 md:mt-4 text-xs sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto text-center px-1 sm:px-2">
-                At SYSLAB.AI (Private) Limited, we specialize in creating intelligent, data-driven solutions designed to transform industries and empower organizations with next-generation technologies.
-            </h2>
+            className="w-full text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight"
+          >
+            Industries We Serve
+          </h1>
+          <h2 className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto text-center px-1 sm:px-2">
+            At SYSLAB.AI (Private) Limited, we specialize in creating intelligent, data-driven solutions designed to transform industries and empower organizations with next-generation technologies.
+          </h2>
         </div>
 
         {/* INDUSTRIES GRID */}
@@ -73,16 +70,16 @@ export default function IndustrySection() {
                 <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight">
                   {industries[0].title}
                 </h3>
-                <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-2 sm:mb-3 leading-relaxed">
+                <p className="text-gray-300 text-sm sm:text-base mb-2 sm:mb-3 leading-relaxed">
                   {industries[0].description}
                 </p>
-                
+
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3">
                   {industries[0].tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 border border-[#4FA8FF] text-[#4FA8FF] text-[10px] sm:text-xs md:text-sm rounded-md hover:bg-[#4FA8FF]/10 transition-all duration-300"
+                      className="px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 md:py-2 border border-[#4FA8FF] text-[#4FA8FF] text-xs md:text-sm rounded-md hover:bg-[#4FA8FF]/10 transition-all duration-300"
                     >
                       {tag}
                     </span>
@@ -114,16 +111,16 @@ export default function IndustrySection() {
                     <h3 className="text-base sm:text-xl md:text-2xl font-bold text-white mb-1.5 sm:mb-2 md:mb-3 leading-tight">
                       {industry.title}
                     </h3>
-                    <p className="text-gray-300 text-[11px] sm:text-xs md:text-sm mb-2 leading-relaxed flex-1">
+                    <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-2 leading-relaxed flex-1">
                       {industry.description}
                     </p>
-                    
+
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       {industry.tags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="px-2.5 sm:px-3 py-1 sm:py-1.5 border border-[#4FA8FF] text-[#4FA8FF] text-[10px] sm:text-xs rounded-md hover:bg-[#4FA8FF]/10 transition-all duration-300"
+                          className="px-2.5 sm:px-3 py-1 sm:py-1.5 border border-[#4FA8FF] text-[#4FA8FF] text-xs rounded-md hover:bg-[#4FA8FF]/10 transition-all duration-300"
                         >
                           {tag}
                         </span>

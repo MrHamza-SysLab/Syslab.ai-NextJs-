@@ -5,11 +5,7 @@ import GlowingButton from "@/components/glowingButton";
 function JoinUsSection() {
   return (
     <section
-      className="relative w-full flex flex-col items-center justify-center py-10 sm:py-14 md:py-18 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12"
-      style={{
-        background:
-          "radial-gradient(58.42% 58.08% at 49.13% 41.92%, #152850 0%, #111827 100%)",
-      }}
+      className="bg-[#020617] relative w-full flex flex-col items-center justify-center py-10 sm:py-14 md:py-18 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12"
     >
       {/* Center Card */}
       <div className="w-full max-w-4xl sm:max-w-5xl mx-auto rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 shadow-[0_0_40px_rgba(15,23,42,0.8)] px-4 xs:px-6 sm:px-8 md:px-12 py-8 sm:py-10 md:py-12 lg:py-14 flex flex-col items-center text-center">
@@ -49,8 +45,8 @@ function JoinUsSection() {
         </div>
       </div>
 
-      
-      
+
+
     </section>
   );
 }

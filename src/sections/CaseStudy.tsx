@@ -35,11 +35,7 @@ export default function CaseStudy() {
 
     return (
         <section
-            className="relative flex items-center justify-center min-h-screen text-white overflow-hidden px-6 sm:px-8 py-16"
-            style={{
-                background:
-                    "radial-gradient(10% 10% at 20% 50%, #121928 100%)",
-            }}
+            className="bg-[#020617] relative flex items-center justify-center min-h-screen text-white overflow-hidden px-6 sm:px-8 py-0"
         >
             <img
                 src="/gradient/Shape.svg"

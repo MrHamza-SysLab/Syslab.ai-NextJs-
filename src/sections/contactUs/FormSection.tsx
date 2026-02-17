@@ -75,10 +75,7 @@ function FormSection() {
 
   return (
     <section
-      className="relative flex flex-col items-center justify-center w-full min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-24 sm:pt-28 pb-12 sm:pb-16 md:pb-20 overflow-hidden"
-      style={{
-        background: "radial-gradient(58.42% 58.08% at 49.13% 41.92%, #152850 0%, #111827 100%)",
-      }}
+      className="bg-[#020617] relative flex flex-col items-center justify-center w-full min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-24 sm:pt-28 pb-12 sm:pb-16 md:pb-20 overflow-hidden"
     >
       {/* Background Glob Image */}
       <img
@@ -90,7 +87,7 @@ function FormSection() {
       <div className="container mx-auto relative z-10 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
           {/* LEFT SECTION - Contact Info */}
-          <div className="flex flex-col justify-center space-y-6 sm:space-y-8">
+          <div className="flex flex-col justify-center space-y-6 sm:space-y-8 order-2 lg:order-1">
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
                 Contact Us
@@ -121,7 +118,7 @@ function FormSection() {
           </div>
 
           {/* RIGHT SECTION - Contact Form */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center order-1 lg:order-2">
             <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-6 sm:mb-8">
                 Send Us a Message

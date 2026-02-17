@@ -21,21 +21,18 @@ export default function Products() {
       title: "Eyecon AI",
       desc: "Eyecon AI focuses on detecting mixed critical events using computer vision. Leveraging Vision Transformers and Visual Language Models, it determines various criticalities in smart cities in real time.",
       img: "/casestudy/network.svg",
-      link: "#",
+      link: "https://eyeconai.com/",
     },
     {
       title: "Recruitment System",
       desc: "Our recruitment platform leverages AI-driven analysis to identify the best candidates, automating evaluation and ensuring unbiased, data-backed hiring decisions.",
       img: "/casestudy/db.svg",
-      link: "#",
+      link: "https://uhire.ubldigital.com/",
     },
   ];
 
   return (
-    <section className="relative flex flex-col justify-center min-h-screen text-white overflow-hidden px-6 sm:px-8 py-16" style={{
-                background:
-                    "radial-gradient(10% 10% at 20% 50%, #121928 100%)",
-            }} >
+    <section className="bg-[#020617] relative flex flex-col justify-center min-h-screen text-white overflow-hidden px-6 sm:px-8 py-16" >
 
       <img
         src="/gradient/Shape.svg"

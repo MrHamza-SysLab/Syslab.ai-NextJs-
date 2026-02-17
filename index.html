@@ -1,0 +1,190 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVG Glow Animation Demo</title>
+  <style>
+    body {
+      background-color: #0a1122;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 40px;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    svg {
+      width: 200px;
+      height: 200px;
+      fill: cyan;
+    }
+
+    /* === Soft Pulse Glow === */
+    @keyframes soft-glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(0,255,255,0.4))
+                drop-shadow(0 0 10px rgba(0,255,255,0.3))
+                drop-shadow(0 0 20px rgba(0,255,255,0.2));
+        opacity: 0.8;
+      }
+      50% {
+        filter: drop-shadow(0 0 10px rgba(0,255,255,0.8))
+                drop-shadow(0 0 20px rgba(0,255,255,0.6))
+                drop-shadow(0 0 40px rgba(0,255,255,0.4));
+        opacity: 1;
+      }
+    }
+    .animate-soft-glow {
+      animation: soft-glow 3s ease-in-out infinite;
+    }
+
+    /* === Electric Flicker Glow === */
+    @keyframes electric-glow {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        filter: drop-shadow(0 0 10px rgba(0,255,255,0.6))
+                drop-shadow(0 0 20px rgba(0,255,255,0.4))
+                drop-shadow(0 0 40px rgba(0,255,255,0.2));
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        filter: drop-shadow(0 0 5px rgba(0,255,255,0.2));
+        opacity: 0.6;
+      }
+    }
+    .animate-electric-glow {
+      animation: electric-glow 2.5s linear infinite;
+    }
+
+    /* === Radiant Wave Glow === */
+    @keyframes radiant-glow {
+      0% {
+        filter: drop-shadow(0 0 5px rgba(0,255,255,0.3))
+                drop-shadow(0 0 15px rgba(0,255,255,0.2));
+        opacity: 0.9;
+      }
+      50% {
+        filter: drop-shadow(0 0 20px rgba(0,255,255,0.8))
+                drop-shadow(0 0 40px rgba(0,255,255,0.6));
+        opacity: 1;
+      }
+      100% {
+        filter: drop-shadow(0 0 5px rgba(0,255,255,0.3))
+                drop-shadow(0 0 15px rgba(0,255,255,0.2));
+        opacity: 0.9;
+      }
+    }
+    .animate-radiant-glow {
+      animation: radiant-glow 4s ease-in-out infinite;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <svg class="animate-soft-glow" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" />
+    </svg>
+    <p>🌟 Soft Pulse Glow</p>
+  </div>
+
+  <div>
+    <svg class="animate-electric-glow" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" />
+    </svg>
+    <p>⚡ Electric Flicker Glow</p>
+  </div>
+
+  <div>
+    <svg class="animate-radiant-glow" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="40" />
+    </svg>
+    <p>💫 Radiant Wave Glow</p>
+  </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-[#0A1A3E] text-white">
+
+  <!-- <section class="flex items-center justify-center min-h-screen bg-[#0A1A3E]">
+  <div class="flex flex-wrap justify-center gap-8">
+    
+   
+    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-b from-[#1E3A8A] to-[#172F60] shadow-[0_0_25px_rgba(37,99,235,0.5)] opacity-40 hover:opacity-100 transition-all duration-500">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#60A5FA" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
+      </svg>
+    </div>
+
+    <div class="w-28 h-28 rounded-full flex items-center justify-center bg-gradient-to-b from-[#2563EB] to-[#1E3A8A] shadow-[0_0_40px_rgba(37,99,235,0.8)] scale-110">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#93C5FD" class="w-12 h-12">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3v18" />
+      </svg>
+    </div>
+
+
+    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-b from-[#1E3A8A] to-[#172F60] shadow-[0_0_25px_rgba(37,99,235,0.5)] opacity-40 hover:opacity-100 transition-all duration-500">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#60A5FA" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
+      </svg>
+    </div> 
+      
+    </div>
+  </section>
+--> 
+  <section class="relative flex items-center justify-center min-h-screen bg-[radial-gradient(50%_50%_at_50%_50%,_#172F60_0%,_#0A1A3E_100%)]">
+  <div class="flex flex-wrap justify-center items-center gap-10 relative">
+
+    <!-- 🔵 Center Glow Background -->
+    <div class="absolute w-52 h-52 rounded-full bg-blue-500/30 blur-[120px]"></div>
+
+    <!-- Icon 1 -->
+    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-b from-[#1E3A8A] to-[#172F60] shadow-[0_0_25px_rgba(37,99,235,0.5)] transition-all duration-500 hover:opacity-100 opacity-60">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#60A5FA" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" />
+      </svg>
+    </div>
+
+    <!-- Icon 2 -->
+    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-b from-[#1E3A8A] to-[#172F60] shadow-[0_0_25px_rgba(37,99,235,0.5)] transition-all duration-500 hover:opacity-100 opacity-60">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#60A5FA" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+      </svg>
+    </div>
+
+    <!-- 🌟 Center Focused Icon -->
+    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-b from-[#2563EB] to-[#1E3A8A] shadow-[0_0_40px_rgba(37,99,235,0.8)] scale-110 z-10">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#93C5FD" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M12 3v18" />
+      </svg>
+    </div>
+
+    <!-- Icon 4 -->
+    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-b from-[#1E3A8A] to-[#172F60] shadow-[0_0_25px_rgba(37,99,235,0.5)] transition-all duration-500 hover:opacity-100 opacity-60">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#60A5FA" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14" />
+      </svg>
+    </div>
+
+    <!-- Icon 5 -->
+    <div class="w-24 h-24 rounded-full flex items-center justify-center bg-gradient-to-b from-[#1E3A8A] to-[#172F60] shadow-[0_0_25px_rgba(37,99,235,0.5)] transition-all duration-500 hover:opacity-100 opacity-60">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#60A5FA" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h12" />
+      </svg>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

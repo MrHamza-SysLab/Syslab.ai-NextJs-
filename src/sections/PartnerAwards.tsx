@@ -15,8 +15,7 @@ export default function PartnerAwards() {
   ];
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen text-white overflow-hidden px-4 sm:px-6 md:px-8 py-12 sm:py-16" 
-    style={{ background: "radial-gradient(50% 50% at 50% 50%, #121928 100%)" }}
+    <section className="bg-[#020617] relative flex flex-col items-center justify-center min-h-screen text-white overflow-hidden px-4 sm:px-6 md:px-8 py-12 sm:py-16" 
     >
 
       <img

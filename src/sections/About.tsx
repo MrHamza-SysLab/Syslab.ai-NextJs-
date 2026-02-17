@@ -1,10 +1,10 @@
 "use client";
 
-import TopRightBulb from "@/../public/herosection/TopRightBulb.svg";
-import LeftPillar from "@/../public/herosection/LeftPillar.svg";
-import MiniGlow from "@/../public/herosection/MiniGlow.svg";
-import TopLeftBulb from "@/../public/herosection/TopLeftBulb.svg";
-import DiagonalBeam from "@/../public/herosection/DiagonalBeam.svg";
+import TopRightBulb from "@/../public/herosection/Design1/TopRightBulb.svg";
+import LeftPillar from "@/../public/herosection/Design1/LeftPillar.svg";
+import MiniGlow from "@/../public/herosection/Design1/MiniGlow.svg";
+import TopLeftBulb from "@/../public/herosection/Design1/TopLeftBulb.svg";
+import DiagonalBeam from "@/../public/herosection/Design1/DiagonalBeam.svg";
 
 import Icon1 from "@/../public/aboutUs/1.svg";
 import Icon2 from "@/../public/aboutUs/2.svg";
@@ -16,8 +16,7 @@ import CornerSVG from "@/../public/aboutUs/corner.svg";
 export default function About() {
     return (
         <section
-            className="relative flex items-center justify-center min-h-screen text-white overflow-hidden px-4 sm:px-6 md:px-8 py-16"
-            style={{ background: "radial-gradient(50% 50% at 50% 50%, #121928 100%)" }}
+            className="bg-[#020617] relative flex items-center justify-center min-h-screen text-white overflow-hidden px-4 sm:px-6 md:px-8 py-16"
         >
             {/* BG Shape */}
             <img

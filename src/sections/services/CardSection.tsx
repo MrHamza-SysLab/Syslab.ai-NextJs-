@@ -38,10 +38,7 @@ export default function CardSection() {
   ];
 
   return (
-    <section className="relative flex flex-col justify-center min-h-screen text-white overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20" style={{
-                background:
-                    "radial-gradient(10% 10% at 20% 50%, #121928 100%)",
-            }} >
+    <section className="bg-[#020617] relative flex flex-col justify-center min-h-screen text-white overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20">
 
       <img
         src="/gradient/Shape.svg"
@@ -56,19 +53,19 @@ export default function CardSection() {
         {/* HEADING */}
         <div className="mb-8 sm:mb-10 md:mb-12 lg:mb-16 w-full text-center px-4">
           <h1
-                className="w-full text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight"
-                style={{
-                    background: "linear-gradient(135deg, #fff, #0ff)",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                }}
-            >
-                Services That Help You Grow
-            </h1>
-            <h2 className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto text-center px-2">
-                At SYSLAB.AI (Private) Limited, we specialize in creating intelligent, data-driven solutions designed to transform industries and empower organizations with next-generation technologies.
-            </h2>
+            className="w-full text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold tracking-tight leading-tight"
+            style={{
+              background: "linear-gradient(135deg, #fff, #0ff)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Services That Help You Grow
+          </h1>
+          <h2 className="mt-2 sm:mt-3 md:mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto text-center px-2">
+            At SYSLAB.AI (Private) Limited, we specialize in creating intelligent, data-driven solutions designed to transform industries and empower organizations with next-generation technologies.
+          </h2>
         </div>
 
         {/* CARDS GRID */}
@@ -81,7 +78,7 @@ export default function CardSection() {
                 className="relative rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 bg-[#0d1b3d] shadow-[inset_2px_2px_4px_#081229,inset_-2px_-2px_4px_#112c6b] flex flex-col items-center text-center hover:bg-black/40 transition-all duration-300"
               >
                 <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
-                
+
                 {/* Icon Container */}
                 <div className="relative z-10 mb-3 sm:mb-4 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-[#0d1b3d] shadow-[inset_2px_2px_4px_#081229,inset_-2px_-2px_4px_#112c6b] flex items-center justify-center">
                   <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />

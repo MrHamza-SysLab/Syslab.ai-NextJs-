@@ -4,10 +4,7 @@
 export default function BannerSection() {
     return (
         <section
-            className="relative flex flex-col items-center justify-center min-h-[70vh] sm:min-h-[80vh] md:min-h-screen text-center text-white overflow-hidden px-4 sm:px-6 md:px-12 lg:px-20 pt-24 sm:pt-28"
-            style={{
-                background: "radial-gradient(40% 25% at 50% 50%, #121928 100%)",
-            }}
+            className="bg-[#020617] relative flex flex-col items-center justify-center min-h-[70vh] sm:min-h-[80vh] md:min-h-screen text-center text-white overflow-hidden px-4 sm:px-6 md:px-12 lg:px-20 pt-24 sm:pt-28"
         >
             {/* === Full Background Image === */}
             <img

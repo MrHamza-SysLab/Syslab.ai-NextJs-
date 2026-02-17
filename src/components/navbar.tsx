@@ -3,8 +3,10 @@ import { MouseEvent, useEffect, useState } from "react";
 import Image from "next/image";
 import { X, Menu } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
-type NavItem = "Home" | "About" | "Products" | "Services" | "Award & Partner";
+// Updated to match the image plural "Partners"
+type NavItem = "Home" | "About" | "Products" | "Services" | "Award & Partners";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -20,7 +22,7 @@ const Navbar: React.FC = () => {
       if (typeof window !== "undefined") {
         const hash = window.location.hash;
         if (hash === "#about") return "About";
-        if (hash === "#award-&-partner") return "Award & Partner";
+        if (hash === "#award-&-partners") return "Award & Partners";
       }
       return "Home";
     }
@@ -38,7 +40,7 @@ const Navbar: React.FC = () => {
     "About",
     "Products",
     "Services",
-    "Award & Partner",
+    "Award & Partners",
   ];
 
   // Sync active state with current route (including reloads and direct links)
@@ -58,182 +60,157 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, [pathname]);
 
-  const scrollOrNavigateToSection = (item: NavItem) => {
-    const isRootSection =
-      item === "Home" || item === "About" || item === "Award & Partner";
-
-    if (isRootSection) {
-      const sectionId =
-        item === "Home"
-          ? "home"
-          : item === "About"
-          ? "about"
-          : "award-&-partner";
-
-      if (pathname !== "/") {
-        // From services/products/contact → go to root first with hash
-        router.push(`/#${sectionId}`);
-        return;
-      }
-
-      // Already on root → smooth scroll
-      const el = document.getElementById(sectionId);
+  const handleLogoClick = () => {
+    if (pathname === "/") {
+      const el = document.getElementById("home");
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
-      return;
-    }
-
-    // Non-root pages: navigate to dedicated routes
-    if (item === "Products") {
-      router.push("/products");
-      return;
-    }
-
-    if (item === "Services") {
-      router.push("/services");
-      return;
+    } else {
+      router.push("/");
     }
   };
 
-  const handleNavClick = (e: MouseEvent, item: NavItem) => {
-    e.preventDefault();
-    setActive(item);
-    scrollOrNavigateToSection(item);
-  };
-
-  const handleLogoClick = () => {
-    if (pathname !== "/") {
-      router.push("/#home");
-      return;
-    }
-    const el = document.getElementById("home");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+  const getHref = (item: NavItem) => {
+    switch (item) {
+      case "Home":
+        return "/#home";
+      case "About":
+        return "/#about";
+      case "Products":
+        return "/products";
+      case "Services":
+        return "/services";
+      case "Award & Partners":
+        return "/services#award-&-partners";
+      default:
+        return "/";
     }
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-        {/* LOGO */}
-        <button
-          type="button"
+    <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+      {/* 
+         Floating Navbar Container 
+         - Pill shape (rounded-full)
+         - Dark background
+         - White border
+      */}
+      <div className="w-full max-w-7xl bg-[#0B0F19]/80 backdrop-blur-md border border-white/20 rounded-3xl px-4 py-3 sm:px-6 sm:py-3 flex items-center justify-between shadow-2xl">
+
+        {/* LOGO SECTION */}
+        <Link
+          href="/#home"
           onClick={handleLogoClick}
-          className="flex items-center gap-3 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer shrink-0"
         >
           <Image
-            src="/footer/logo.svg"
-            alt="Company Logo"
+            src="/footer/whitelogo.svg"
+            alt="Syslab Logo"
             width={32}
             height={32}
+            className="w-8 h-8 md:w-9 md:h-9"
           />
-          <h3 className="text-2xl font-semibold text-white">
-            SysLab.<strong className="text-blue-600">ai</strong>
+          <h3 className="text-xl md:text-2xl font-semibold text-white tracking-wide">
+            Syslab.<span className="text-blue-500">ai</span>
           </h3>
-        </button>
+        </Link>
 
-        {/* DESKTOP MENU */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <li key={item}>
-              <button
-                type="button"
-                onClick={(e) => handleNavClick(e, item)}
-                className={`relative px-4 py-2 rounded-md text-lg font-medium transition-all duration-300 ${
-                  pathname !== "/contact" && active === item
-                    ? "text-white after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-sky-400 after:to-blue-500 after:rounded-full bg-white/10"
+        {/* DESKTOP MENU - CENTERED */}
+        <ul className="hidden lg:flex items-center gap-2">
+          {navItems.map((item) => {
+            const isActive = pathname !== "/contact" && active === item;
+            return (
+              <li key={item}>
+                <Link
+                  href={getHref(item)}
+                  onClick={() => setActive(item)}
+                  className={`px-5 py-2 rounded-3xl text-base font-medium transition-all duration-300 block ${isActive
+                    ? "bg-white text-black shadow-lg"
                     : "text-gray-300 hover:text-white hover:bg-white/5"
-                }`}
-              >
-                {item}
-              </button>
-            </li>
-          ))}
+                    }`}
+                >
+                  {item}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
-        {/* CONTACT US BUTTON → PAGE ROUTE */}
-        <button
-          type="button"
-          onClick={() => router.push("/contact")}
-          className={`hidden md:block font-medium px-5 py-2 rounded-md transition-all duration-300 ${
-            pathname === "/contact"
-              ? "bg-blue-700 text-white shadow-[0_0_25px_rgba(37,99,235,0.6)]"
-              : "bg-white hover:bg-blue-700 hover:text-white text-black"
-          }`}
-        >
-          Contact Us
-        </button>
+        {/* RIGHT ACTION - CONTACT US */}
+        <div className="hidden lg:block shrink-0">
+          <Link
+            href="/contact"
+            className="bg-white text-black font-semibold px-6 py-2.5 rounded-3xl text-base shadow-lg hover:bg-gray-100 transition-colors duration-300 inline-block"
+          >
+            Contact Us
+          </Link>
+        </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE MENU TOGGLE */}
         <button
           onClick={() => setIsOpen(true)}
-          className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:bg-white/10 focus:outline-none"
+          className="lg:hidden p-2 text-white hover:bg-white/10 rounded-3xl transition-colors"
         >
           <Menu className="w-6 h-6" />
         </button>
       </div>
 
-      {/* MOBILE SIDEBAR */}
+      {/* MOBILE SIDEBAR OVERLAY */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* MOBILE SIDEBAR MENU */}
       <div
-        className={`fixed top-0 right-0 h-screen w-64 shadow-xl transform transition-transform duration-300 z-50 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, #0b2f7a 0%, #0A1A3E 100%)",
-        }}
+        className={`fixed top-0 right-0 h-full w-full sm:w-80 bg-[#0B0F19] border-l border-white/10 shadow-2xl transform transition-transform duration-300 ease-in-out z-[70] ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
-          <h2 className="text-lg font-semibold text-white">Menu</h2>
+        <div className="flex items-center justify-between px-6 py-6 border-b border-white/10">
+          <h2 className="text-xl font-semibold text-white">Menu</h2>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-gray-300 hover:text-white"
+            className="text-gray-400 hover:text-white p-1"
           >
             <X className="w-6 h-6" />
           </button>
         </div>
 
-        <ul className="flex flex-col mt-6 space-y-3 px-4">
-          {navItems.map((item) => (
-            <li key={item}>
-              <button
-                type="button"
-                onClick={(e) => {
-                  handleNavClick(e, item);
+        <div className="flex flex-col p-6 space-y-4">
+          {navItems.map((item) => {
+            const isActive = pathname !== "/contact" && active === item;
+            return (
+              <Link
+                key={item}
+                href={getHref(item)}
+                onClick={() => {
+                  setActive(item);
                   setIsOpen(false);
                 }}
-                className={`w-full text-left px-4 py-2 rounded-md font-medium transition-all duration-300 ${
-                  pathname !== "/contact" && active === item
-                    ? "bg-blue-700 text-white"
-                    : "text-gray-300 hover:text-white hover:bg-white/10"
-                }`}
+                className={`w-full text-left px-4 py-3 rounded-xl font-medium transition-all block ${isActive
+                  ? "bg-blue-600 text-white"
+                  : "text-gray-300 hover:text-white hover:bg-white/5"
+                  }`}
               >
                 {item}
-              </button>
-            </li>
-          ))}
-        </ul>
+              </Link>
+            );
+          })}
 
-        <button
-          type="button"
-          onClick={() => {
-            router.push("/contact");
-            setIsOpen(false);
-          }}
-          className="mt-8 px-4 w-full bg-white hover:bg-blue-700 hover:text-white text-black font-medium py-2 rounded-md transition-all duration-300"
-        >
-          Contact Us
-        </button>
+          <div className="pt-4 border-t border-white/10 mt-4">
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-gray-100 transition-colors block text-center"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
       </div>
-
-      {/* OVERLAY */}
-      {isOpen && (
-        <div
-          onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-black/50 z-40"
-        ></div>
-      )}
     </nav>
   );
 };
