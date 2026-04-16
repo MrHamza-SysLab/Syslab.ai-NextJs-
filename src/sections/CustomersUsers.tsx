@@ -44,7 +44,7 @@ export default function CustomersUsers() {
                             WebkitTextFillColor: "transparent",
                         }}
                     >
-                        Customers & Users
+                        Our Clients
                     </h1>
                 </div>
 

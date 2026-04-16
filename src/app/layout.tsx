@@ -25,6 +25,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Syslab.ai",
   description: "Develop by Syslab.ai",
+  icons: {
+    icon: "/whitelogo.svg",
+    shortcut: "/whitelogo.svg",
+  },
 };
 
 export default function RootLayout({
