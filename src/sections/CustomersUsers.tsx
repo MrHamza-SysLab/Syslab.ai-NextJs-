@@ -12,6 +12,9 @@ export default function CustomersUsers() {
         { name: "PakOxygen", image: "/customers/pakOxygen.svg" },
         { name: "UBL", image: "/customers/UBL.svg" },
         { name: "Shamsi", image: "/customers/shamsi.svg" },
+        { name: "Angro", image: "/customers/engro.svg" },
+        { name: "ChildLife", image: "/customers/childlife.png" },
+
     ];
 
     return (

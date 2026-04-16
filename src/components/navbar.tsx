@@ -1,29 +1,34 @@
 "use client";
-import { MouseEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { X, Menu } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
 // Updated to match the image plural "Partners"
-type NavItem = "Home" | "About" | "Products" | "Services" | "Award & Partners";
+type NavItem = "Home" | "About" | "Products" | "Services" | "Award & Partners" | "Our Clients";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
 
   const getActiveFromLocation = (): NavItem => {
-    // Non-root pages
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+
+    // Services page supports both generic and section-specific highlight
+    if (pathname === "/services") {
+      if (hash === "#award-&-partners") return "Award & Partners";
+      return "Services";
+    }
+
+    // Dedicated pages
     if (pathname === "/products") return "Products";
-    if (pathname === "/services") return "Services";
 
     // Root page with hash-based sections
     if (pathname === "/") {
-      if (typeof window !== "undefined") {
-        const hash = window.location.hash;
-        if (hash === "#about") return "About";
-        if (hash === "#award-&-partners") return "Award & Partners";
-      }
+      if (hash === "#about") return "About";
+      if (hash === "#customers-users") return "Our Clients";
+      if (hash === "#award-&-partners") return "Award & Partners";
       return "Home";
     }
 
@@ -41,6 +46,7 @@ const Navbar: React.FC = () => {
     "Products",
     "Services",
     "Award & Partners",
+    "Our Clients",
   ];
 
   // Sync active state with current route (including reloads and direct links)
@@ -48,10 +54,8 @@ const Navbar: React.FC = () => {
     setActive(getActiveFromLocation());
   }, [pathname]);
 
-  // Update active state when only hash changes on root (back/forward, manual anchors)
+  // Update active state when hash changes (back/forward, manual anchors)
   useEffect(() => {
-    if (pathname !== "/") return;
-
     const onHashChange = () => {
       setActive(getActiveFromLocation());
     };
@@ -60,7 +64,7 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("hashchange", onHashChange);
   }, [pathname]);
 
-  const handleLogoClick = () => {
+  const   handleLogoClick = () => {
     if (pathname === "/") {
       const el = document.getElementById("home");
       if (el) {
@@ -83,6 +87,8 @@ const Navbar: React.FC = () => {
         return "/services";
       case "Award & Partners":
         return "/services#award-&-partners";
+      case "Our Clients":
+        return "/#customers-users";
       default:
         return "/";
     }
