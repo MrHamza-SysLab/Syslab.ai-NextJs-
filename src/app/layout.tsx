@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Syslab.ai",
+  title: "Syslab.aii",
   description: "Develop by Syslab.ai",
   icons: {
     icon: "/whitelogo.svg",
